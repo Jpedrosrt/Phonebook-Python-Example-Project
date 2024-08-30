@@ -1,0 +1,98 @@
+<html><body><h1>src\phonebook\cli.py</h1>Killed 0 out of 9 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -15,7 +15,7 @@
+ 
+ 
+ def determine_consistency(infile):
+-    book = Phonebook()
++    book = None
+     reader = csv.DictReader(infile)
+     for row in reader:
+         name = row["Name"]
+</pre><h3>Mutant 2</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -16,7 +16,7 @@
+ 
+ def determine_consistency(infile):
+     book = Phonebook()
+-    reader = csv.DictReader(infile)
++    reader = None
+     for row in reader:
+         name = row["Name"]
+         number = row["Phone Number"]
+</pre><h3>Mutant 3</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -18,7 +18,7 @@
+     book = Phonebook()
+     reader = csv.DictReader(infile)
+     for row in reader:
+-        name = row["Name"]
++        name = row["XXNameXX"]
+         number = row["Phone Number"]
+         book.add(name, number)
+     print(f"Phonebook is consistent: {book.is_consistent()}")
+</pre><h3>Mutant 4</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -18,7 +18,7 @@
+     book = Phonebook()
+     reader = csv.DictReader(infile)
+     for row in reader:
+-        name = row["Name"]
++        name = None
+         number = row["Phone Number"]
+         book.add(name, number)
+     print(f"Phonebook is consistent: {book.is_consistent()}")
+</pre><h3>Mutant 5</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -19,7 +19,7 @@
+     reader = csv.DictReader(infile)
+     for row in reader:
+         name = row["Name"]
+-        number = row["Phone Number"]
++        number = row["XXPhone NumberXX"]
+         book.add(name, number)
+     print(f"Phonebook is consistent: {book.is_consistent()}")
+     book.clear()
+</pre><h3>Mutant 6</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -19,7 +19,7 @@
+     reader = csv.DictReader(infile)
+     for row in reader:
+         name = row["Name"]
+-        number = row["Phone Number"]
++        number = None
+         book.add(name, number)
+     print(f"Phonebook is consistent: {book.is_consistent()}")
+     book.clear()
+</pre><h3>Mutant 7</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -21,7 +21,7 @@
+         name = row["Name"]
+         number = row["Phone Number"]
+         book.add(name, number)
+-    print(f"Phonebook is consistent: {book.is_consistent()}")
++    print(f"XXPhonebook is consistent: {book.is_consistent()}XX")
+     book.clear()
+ 
+ 
+</pre><h3>Mutant 8</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -30,6 +30,6 @@
+     determine_consistency(sys.stdin)
+ 
+ 
+-if __name__ == '__main__':
++if __name__ != '__main__':
+     main()
+ 
+</pre><h3>Mutant 9</h3><pre>--- src\phonebook\cli.py
++++ src\phonebook\cli.py
+@@ -30,6 +30,6 @@
+     determine_consistency(sys.stdin)
+ 
+ 
+-if __name__ == '__main__':
++if __name__ == 'XX__main__XX':
+     main()
+ 
+</pre></body></html>

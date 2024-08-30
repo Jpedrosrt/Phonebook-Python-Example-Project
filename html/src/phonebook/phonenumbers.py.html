@@ -1,0 +1,34 @@
+<html><body><h1>src\phonebook\phonenumbers.py</h1>Killed 9 out of 12 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 16</h3><pre>--- src\phonebook\phonenumbers.py
++++ src\phonebook\phonenumbers.py
+@@ -7,7 +7,7 @@
+ 
+     def __init__(self, cache_directory=None):
+         self.numbers = {}
+-        cache_dir = cache_directory or os.getcwd()
++        cache_dir = cache_directory and os.getcwd()
+         self.filename = os.path.join(cache_dir, "phonebook.txt")
+         self.cache = open(self.filename, "w")
+ 
+</pre><h3>Mutant 18</h3><pre>--- src\phonebook\phonenumbers.py
++++ src\phonebook\phonenumbers.py
+@@ -8,7 +8,7 @@
+     def __init__(self, cache_directory=None):
+         self.numbers = {}
+         cache_dir = cache_directory or os.getcwd()
+-        self.filename = os.path.join(cache_dir, "phonebook.txt")
++        self.filename = os.path.join(cache_dir, "XXphonebook.txtXX")
+         self.cache = open(self.filename, "w")
+ 
+     def add(self, name, number):
+</pre><h3>Mutant 21</h3><pre>--- src\phonebook\phonenumbers.py
++++ src\phonebook\phonenumbers.py
+@@ -9,7 +9,7 @@
+         self.numbers = {}
+         cache_dir = cache_directory or os.getcwd()
+         self.filename = os.path.join(cache_dir, "phonebook.txt")
+-        self.cache = open(self.filename, "w")
++        self.cache = None
+ 
+     def add(self, name, number):
+         self.numbers[name] = number
+</pre></body></html>
