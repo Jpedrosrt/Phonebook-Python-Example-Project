@@ -1,6 +1,8 @@
 """Tests for Phonebook class."""
 
 import pytest
+from pathlib import Path
+import os
 
 
 def test_lookup_by_name(phonebook):
@@ -36,3 +38,8 @@ def test_is_consistent(phonebook, entry1, entry2, is_consistent):
 @pytest.mark.skip("Work in process on new feature")
 def test_some_new_feature():
     assert False # test should fail!
+
+def test_cache_file_creation(phonebook):
+
+    expected_file = Path(phonebook.filename)
+    assert expected_file.exists()

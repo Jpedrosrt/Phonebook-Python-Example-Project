@@ -8,7 +8,7 @@ class Phonebook:
     def __init__(self, cache_directory=None):
         self.numbers = {}
         cache_dir = cache_directory or os.getcwd()
-        self.filename = os.path.join(cache_dir, "phonebook.txt")
+        self.filename = os.path.join(cache_dir, "XXphonebook.txtXX")
         self.cache = open(self.filename, "w")
 
     def add(self, name, number):
